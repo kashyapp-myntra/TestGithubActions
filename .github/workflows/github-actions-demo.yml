@@ -16,3 +16,13 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https://dummy.restapiexample.com/api/v1/create'
+        method: 'POST'
+        customHeaders: '{"Content-Type": "application/json"}'
+        data: '{"name":"test","salary":"123","age":"23"}'      

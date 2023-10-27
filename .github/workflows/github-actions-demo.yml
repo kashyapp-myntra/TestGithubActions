@@ -27,5 +27,6 @@ jobs:
         customHeaders: '{"Content-Type": "application/json"}'
         data: '{"name":"test","salary":"123","age":"23"}'  
     - name: Show Response
-      run: echo ${{ steps.myRequest.outputs.response }}
+      run: |
+          echo Job response is ${{ steps.myRequest.outputs.response }}
           

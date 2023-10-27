@@ -29,4 +29,5 @@ jobs:
     - name: Show Response
       run: |
           echo Job response is ${{ steps.myRequest.outputs.response }}
+          echo Job response header is ${{ steps.myRequest.outputs.headers }}
           

@@ -19,7 +19,8 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy Stage
+    - name: Make Request
+      id: myRequest
       uses: fjogeleit/http-request-action@v1
       with:
         url: 'https://dummy.restapiexample.com/api/v1/create'

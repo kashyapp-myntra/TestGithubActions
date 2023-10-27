@@ -30,4 +30,5 @@ jobs:
       run: |
           echo Job response is ${{ steps.myRequest.outputs.response }}
           echo Job response header is ${{ steps.myRequest.outputs.headers }}
+          echo Job response status code is ${{ steps.myRequest.outputs.status }}
           

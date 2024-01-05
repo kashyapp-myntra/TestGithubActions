@@ -32,4 +32,19 @@ jobs:
           echo Job response is ${{ steps.myRequest.outputs.response }}
           echo Job response header is ${{ steps.myRequest.outputs.headers }}
           echo Job response status code is ${{ steps.myRequest.outputs.status }}
+  mtestRun:
+    runs-on: mtest
+    steps:
+    - name: mtest Request
+      id: mtestRequest
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https://mtest.stage.myntra.com/healthcheck'
+        method: 'GET'
+        customHeaders: '{"Content-Type": "application/json"}'
+    - name: mtest Response
+      run: |
+          echo Job response is ${{ steps.mtestRequest.outputs.response }}
+          echo Job response header is ${{ steps.mtestRequest.outputs.headers }}
+          echo Job response status code is ${{ steps.mtestRequest.outputs.status }}         
           

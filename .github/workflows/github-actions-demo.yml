@@ -39,9 +39,8 @@ jobs:
       id: mtestRequest
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://mtest.stage.myntra.com/healthcheck'
+        url: 'https://mtest.myntra.com/healthcheck'
         method: 'GET'
-        customHeaders: '{"Content-Type": "application/json"}'
     - name: mtest Response
       run: |
           echo Job response is ${{ steps.mtestRequest.outputs.response }}
